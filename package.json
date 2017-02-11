@@ -1,0 +1,30 @@
+npms {
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.1",
+    "mongoose": "^4.8.2",
+    "passport": "^0.3.2",
+    "yelp": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start":"node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Compleat/Hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Compleat/Hackathon/issues"
+  },
+  "homepage": "https://github.com/Compleat/Hackathon#readme"
+}
