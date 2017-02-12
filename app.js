@@ -1,4 +1,5 @@
 var express = require('express');
+var logger = require('morgan');
 var bodyParser = require('body-parser');
 var path = require('path');
 var expresshandlebars = require('express-handlebars');
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Mongoose stuff here
 
 var mongoose = require('mongoose');
-var connect = process.env.MONGODB_URI || require('./models/connect');
+var connect = process.env.MONGODB_URI;
 mongoose.connect(connect);
 
 // Passport stuff here
@@ -120,4 +121,4 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-app.listen(process.env.PORT || 3000);
+app.listen('3000');
