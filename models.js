@@ -7,13 +7,36 @@ var userSchema = mongoose.Schema({
 });
 
 var restaurantSchema = mongoose.Schema({
-  restname: String,
-  restlocation: String,
-  restphone: String,
-  resturl: String,
+  restname: {
+    type: String,
+    required: true
+  },
+  restlocation: {
+    display_address:[String],
+    zip_code: String,
+    city: String,
+    address1: String,
+    state: String,
+    country: String
+  },
   restdistance: Number,
-  resttype: String,
-  restcoord: Object,
+  restcategory: [{}],
+  restcoord: {
+    type: Object,
+    required: true
+  },
+  restrating: Number,
+  restphone: {
+    type: String,
+    required: true
+  },
+  restprice: String,
+  restdisplayphone: String,
+  restcount: Number,
+  resturl: {
+    type: String,
+    required: true
+  },
   restleaf: Number
 });
 
