@@ -1,0 +1,3 @@
+export GRANT_TYPE='client_credentials'
+export YELP_CONSUMER_KEY='SRLtYeYdejihqv8XZWM8IA'
+export YELP_CONSUMER_SECRET='TvDg3sFbtkRmhTqgsjdwrWGAdT7BuGSzftBUF8UACjO98J3gCxRHKcfOLQMOkXZ1'
