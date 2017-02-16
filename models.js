@@ -9,8 +9,12 @@ var userSchema = mongoose.Schema({
 var restaurantSchema = mongoose.Schema({
   restname: String,
   restlocation: String,
-  restphone: String
-
+  restphone: String,
+  resturl: String,
+  restdistance: Number,
+  resttype: String,
+  restcoord: Object,
+  restleaf: Number
 });
 
 // TODO - this lol
