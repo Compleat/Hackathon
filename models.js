@@ -32,7 +32,7 @@ var restaurantSchema = mongoose.Schema({
   },
   restprice: String,
   restdisplayphone: String,
-  restcount: Number
+  restcount: Number,
   resturl: {
     type: String,
     required: true
