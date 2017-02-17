@@ -13,23 +13,137 @@
   <link href="themes/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="stylesheets/carousel.css" rel="stylesheet">
+
+  <link href="themes/assets/css/carousel.css" rel="stylesheet">
 </head>
 <body>
+  <nav class="navbar-wrapper">
+    <div class="container">
 
-  <div >
+      <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="index.html">Compleat</a> -->
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Compleat</a></li>
+              <!-- <li><a href="about.html">About Us</a></li> -->
+              <li><a href="contact.html"></a></li>
+              <li><a href="#tablebooking"></a></li>
+              <li><a href="#tablebooking"></a></li>
+              <li><a href="#tablebooking"></a></li>
+
+              <li><input class="searchbar" type="text" name="search" placeholder="Search..         "></li>
+
+              <li><a href="#tablebooking"></a></li>
+              <li><a href="#tablebooking"></a></li>
+              <li><a href="#tablebooking"></a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dietary Restrictions<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Select the following</li>
+                  <li><input type="checkbox">Vegan</li>
+                  <li><input type="checkbox">Vegetarian</li>
+                  <li><input type="checkbox">Gluten Free</li>
+                  <li><input type="checkbox">Nut Free</li>
+                  <li><input type="checkbox">Lactose Free</li>
+                </ul>
+              </li>
+
+              <li><a href="#tablebooking"></a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Leaf Rating<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Select the following</li>
+                  <li class="dropdown-header">The Leaf Rating is a speciality in-house score based on the number of options available at each restaurant</li>
+                  <li><input type="checkbox">Single Leaf</li>
+                  <li><input type="checkbox">Double Leaf</li>
+                  <li><input type="checkbox">Triple Leaf</li>
+                </ul>
+              </li>
+
+              <li><a href="#tablebooking"></a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuisine<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Select the following</li>
+                  <li><input type="checkbox">Murican</li>
+                  <li><input type="checkbox">Chinese</li>
+                  <li><input type="checkbox">Ethiopian</li>
+                  <li><input type="checkbox">Greek</li>
+                  <li><input type="checkbox">Indian</li>
+                  <li><input type="checkbox">Italian</li>
+                  <li><input type="checkbox">Japanese</li>
+                  <li><input type="checkbox">Korean</li>
+                  <li><input type="checkbox">Mexican</li>
+                  <li><input type="checkbox">Southern</li>
+                  <li><input type="checkbox">Thai</li>
+                  <li><input type="checkbox">Vietnamese</li>
+                  <li><input type="checkbox">Other</li>
+                </ul>
+              </li>
+
+              <li><a href="#tablebooking"></a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Price<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Select the following</li>
+                  <li><input type="checkbox">$ (<$10)</li>
+                  <li><input type="checkbox">$$ ($10-20)</li>
+                  <li><input type="checkbox">$$$ ($20-35)</li>
+                  <li><input type="checkbox">$$$$ ($35+)</li>
+                </ul>
+              </li>
+
+              <li><a href="#tablebooking"></a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Distance<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Select the following</li>
+                  <li><input type="checkbox">Less than a mile</li>
+                  <li><input type="checkbox">1 Mile - 5 Miles</li>
+                  <li><input type="checkbox">6 - 15 Miles</li>
+                  <li><input type="checkbox">16+ Miles</li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="container">
     {{{body}}}
   </div>
-
-
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
       <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&copy; 2017 Compleat, Inc. &middot; <a href="privacy">Privacy &amp; Terms</a>
+      <p>&copy; 2017 Compleat, Inc. &middot; <a href="#privacy">Privacy &amp; Terms</a>
         <a href="#">               &middot;</a>
-        <a href="login.hbs">Business Login</a>
+        <a href="#businesslogin">Business Login</a>
+
       </p>
     </div>
   </footer>
@@ -38,8 +152,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- <script src="/scripts/script.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+  <script src="/scripts/script.js"></script>
   <script src="themes/dist/js/bootstrap.min.js"></script>
   <script src="themes/assets/js/holder.js"></script>
 </body>
