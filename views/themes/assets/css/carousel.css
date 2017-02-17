@@ -40,9 +40,10 @@ body {
 
 }
 
-.dropdown {
+.dropdown1 {
   position: absolute;
   left: 120px;
+  font-family: Monospace;
 }
 
 

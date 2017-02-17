@@ -1,4 +1,112 @@
 
+
+<!-- NAVBAR
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+</head>
+
+<nav class="navbar-wrapper">
+  <div class="container">
+
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="index.html">Compleat</a> -->
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Compleat</a></li>
+            <!-- <li><a href="about.html">About Us</a></li> -->
+            <li><a></a></li>
+
+            <li class="searchbar"><input type="text" name="search" placeholder="Search...           "></li>
+
+            <li><a></a></li>
+
+            <li class="dropdown1">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dietary Restrictions<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Select the following</li>
+                <li><input type="checkbox">Vegan</li>
+                <li><input type="checkbox">Vegetarian</li>
+                <li><input type="checkbox">Gluten Free</li>
+                <li><input type="checkbox">Nut Free</li>
+                <li><input type="checkbox">Lactose Free</li>
+              </ul>
+            </li>
+
+            <!-- <li><a href="#tablebooking"></a></li> -->
+
+            <li class="dropdown1">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Leaf Rating<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Select the following</li>
+                <li class="dropdown-header">The Leaf Rating is a speciality in-house score based on the number of options available at each restaurant</li>
+                <li><input type="checkbox">Single Leaf</li>
+                <li><input type="checkbox">Double Leaf</li>
+                <li><input type="checkbox">Triple Leaf</li>
+              </ul>
+            </li>
+
+            <!-- <li><a href="#tablebooking"></a></li> -->
+
+            <li class="dropdown1">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuisine<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Select the following</li>
+                <li><input type="checkbox">Murican</li>
+                <li><input type="checkbox">Chinese</li>
+                <li><input type="checkbox">Ethiopian</li>
+                <li><input type="checkbox">Greek</li>
+                <li><input type="checkbox">Indian</li>
+                <li><input type="checkbox">Italian</li>
+                <li><input type="checkbox">Japanese</li>
+                <li><input type="checkbox">Korean</li>
+                <li><input type="checkbox">Mexican</li>
+                <li><input type="checkbox">Southern</li>
+                <li><input type="checkbox">Thai</li>
+                <li><input type="checkbox">Vietnamese</li>
+                <li><input type="checkbox">Other</li>
+              </ul>
+            </li>
+
+            <!-- <li><a href="#tablebooking"></a></li> -->
+
+            <li class="dropdown1">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Price<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Select the following</li>
+                <li><input type="checkbox">$ (<$10)</li>
+                <li><input type="checkbox">$$ ($10-20)</li>
+                <li><input type="checkbox">$$$ ($20-35)</li>
+                <li><input type="checkbox">$$$$ ($35+)</li>
+              </ul>
+            </li>
+
+            <!-- <li><a href="#tablebooking"></a></li> -->
+
+            <li class="dropdown1">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Distance<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="divider"></li>
+                <li class="dropdown-header">Select the following</li>
+                <li><input type="checkbox">Less than a mile</li>
+                <li><input type="checkbox">1 Mile - 5 Miles</li>
+                <li><input type="checkbox">6 - 15 Miles</li>
+                <li><input type="checkbox">16+ Miles</li>
+              </ul>
+            </li>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -106,6 +214,62 @@
                   </ul>
                 </li>
 
+  </div>
+</nav>
+
+
+
+
+
+<!-- Carousel
+<div id="mainCarousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active">
+        <script
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+        </script>
+        <script>
+        var myCenter=new google.maps.LatLng(37.7708610,-122.4142490);
+        var marker;
+        function initialize()
+        {
+          var mapProp = {
+            center:myCenter,
+            zoom:14,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          marker=new google.maps.Marker({
+            position:myCenter,
+            // icon:'themes/assets/images/nepali-momo.png',
+            animation:google.maps.Animation.BOUNCE
+          });
+
+          marker.setMap(map);
+
+          // Info open
+          var infowindow = new google.maps.InfoWindow({
+            content:"Your location"
+          });
+
+          google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+          });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+        <div id="googleMap" style="height:450px;"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <a id="greenbutton" class="btn btn-lg btn-default" href="#" role="button" style="font-size:2em">Find Restaurants &raquo;
+            </a>
               </ul>
             </div>
           </div>
@@ -114,6 +278,44 @@
       </div>
     </div>
 
+  </div><!-- /.carousel -->
+</div>
+
+<div class="mainTitle">
+  <div class="container" id="#mainfonts">
+    <h1>Welcome to Compleat</h1>
+    <p>
+      The dietary restrictive search site you've always been looking for!
+
+      <br>
+
+      Click on as many search options as you want and then click Find Restaurants once you're done!
+    </p>
+  </div>
+</div>
+
+<div class="introSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4" id=#descriptors>
+        <h3>About us</h3>
+        <p>
+          Compleat is dedicated towards helping people with dietary restrictions find restaurants. More than just a search website, find restaurants that are specifically catered towards your dietary needs.
+        </p>
+      </div>
+
+      <div class="col-lg-4">
+        <h3>Our Leaf Rating</h3>
+        <p>
+          Our in-house speciality Leaf Rating provides you with a indication of how many dishes at each restaurant fit the dietary restriction you're looking for. Now you can find more than just a soup or a salad!
+        </p>
+
+
+
+      <div class="col-lg-4">
+        <h3>Partner with us</h3>
+        <p>
+          Restaurants and Eateries who cater towards customers with dietary restrictions looking to improve customer traffic are the perfect businesses to partner with us!
 
     <!-- Carousel
     ================================================== -->
