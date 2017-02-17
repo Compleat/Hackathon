@@ -35,6 +35,7 @@ var restaurantSchema = mongoose.Schema({
   restcount: Number,
   resturl: {
     type: String,
+
     required: true
   },
   restleaf: Number
@@ -45,12 +46,24 @@ var filterSchema = mongoose.Schema({
   filter: String
 });
 
-User = mongoose.model('User', userSchema);
-Restaurant = mongoose.model("Restaurant", restaurantSchema);
-Filter = mongoose.model("Filter", filterSchema);
+restaurantSchema.statics.findOrCreate = function(rest,cb){
+  this.findOne({restname: rest.restname},function(err,rst){
+      if(err) console.log(err);
+      if(rst) console.log('rest already entered');
+      if(!rst){
+        rest.save(function(err){
+          if(err)console.log(err);
+        });
+      }
+    });
+  }
 
-module.exports = {
+  User = mongoose.model('User', userSchema);
+  Restaurant = mongoose.model("Restaurant", restaurantSchema);
+  Filter = mongoose.model("Filter", filterSchema);
+
+  module.exports = {
     User:User,
     Restaurant:Restaurant,
     Filter:Filter
-};
+  };
