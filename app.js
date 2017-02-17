@@ -19,7 +19,7 @@ REQUIRED_ENV.forEach(function(el) {
   }
 });
 
-
+// mongoose.Promise = global.Promise;
 mongoose.connect(connect);
 
 var models = require('./models');
@@ -113,7 +113,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 app.listen(port);
 console.log('Express started. Listening on port %s', port);
 
