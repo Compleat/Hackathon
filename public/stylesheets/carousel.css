@@ -26,6 +26,9 @@ body {
 .navbar-wrapper .navbar {
   padding-left: 15px;
   padding-right: 15px;
+  font-family: filson-soft, sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }
 
 .searchbar {
@@ -35,14 +38,34 @@ body {
   right: 1px;
   height: 30px;
   width: 160px;
-  background-color: #ce4848;
   color: white;
-
+  font-family: filson-soft, sans-serif;
+  font-style: normal;
+  font-weight: 150;
 }
 
-.dropdown {
+.mainTitle {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 300;
+}
+
+#greenbutton {
+  font-family: 'ABeeZee', sans-serif;
+  font-style: bold;
+  font-weight: 400;
+}
+
+.dropdown1 {
   position: absolute;
-  left: 120px;
+}
+
+#footer p {
+  color: white;
+}
+
+h3 {
+  color: #356A50;
 }
 
 
@@ -85,7 +108,7 @@ body {
 /* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .marketing h2 {
   font-weight: normal;
@@ -114,39 +137,39 @@ body {
 /* Custom CSS =========================================== */
 .navbar-inverse {background-color: #efefef; border-color: #FF5200;}
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus,
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {color: #fff; background-color: #c83a3a;}
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {background-color: #e4dcd2;}
-.navbar-inverse .navbar-toggle {border-color: #c83a3a;}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {color: #fff; background-color: #4F9B76;}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {background-color: #4F9B76;}
+.navbar-inverse .navbar-toggle {border-color: #4F9B76;}
 .navbar-inverse .navbar-nav > li > a{color:#000}
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{color:#C83A3A}
-a{color:#fff}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{color:#4F9B76}
+a{color:#4F9B76}
 a:hover{color:#eee}
 .marketing img{max-width:100%}
 .carousel-caption {color: #000000;}
-.carousel-caption  h1{background-color: #eb4800;color: #fff;display:inline-block;padding:4px 18px; width: auto;-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';opacity: 0.8;}
-.dsc {background-color: #757575;color: #fff;display: inline-block;padding: 4px 18px; width: auto;-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';opacity: 0.8;}
+.carousel-caption  h1{background-color: #4F9B76;color: #fff;display:inline-block;padding:4px 18px; width: auto;-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';opacity: 0.8;}
+.dsc {background-color: #4F9B76;color: #fff;display: inline-block;padding: 4px 18px; width: auto;-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)';opacity: 0.8;}
 .highlightSection{padding:28px 0}
 .highlightSection img{padding:0 0 28px 0}
 .highlightSection .media{background-color: #efefef;border: 1px solid #efefef;color: #939393;padding: 10px;text-align: center;}
 .introSection{background-color: #efefef; padding:28px 0}
 .brandBtn{background-color: #7db641;}
-.btn-default{color: #fff;background-color: #7db641;border-color: #7db641;border-radius:0}
-.btn-default.active, .open .dropdown-toggle.btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active {color: #fff;background-color: #c83a3a ;border-color: #c83a3a ;}
+.btn-default{color: #fff;background-color: #4F9B76;border-color: #7db641;border-radius:0}
+.btn-default.active, .open .dropdown-toggle.btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active {color: #fff;background-color: #c83a3a ;border-color: #4F9B76 ;}
 .text-primary-theme {color: #7db641;}
 .text-danger-theme {color: #FF007A;}
 .carousel-control.right, .carousel-control.left,
 #myCarousel1 .carousel-control.right, #myCarousel1 .carousel-control.left,
 #myCarousel2 .carousel-control.right, #myCarousel2 .carousel-control.left {background: none;color: #057C00;font-size: 3em; width: 6%;}
-.itemsTitle{border-bottom: 1px solid #e7e7e7;padding: 8px 30px;font-size: 20px;text-transform: uppercase;position: relative;margin-bottom: 20px;text-align:center}
+.itemsTitle{border-bottom: 1px solid #4F9B76;padding: 8px 30px;font-size: 20px;text-transform: uppercase;position: relative;margin-bottom: 20px;text-align:center}
 #myCarousel .container{padding:0}
 #mainCarousel .carousel .item {height: 450px;background-color: #FFF;}
 footer{padding:18px 0; background:#111; color:#fff;}
 .marketing{padding:28px 0}
-.pageTitle{padding:18px 0; border-top:1px solid #efefef; margin-top:92px; background:#efefef}
+.pageTitle{padding:18px 0; border-top:1px solid #4F9B76; margin-top:92px; background:#efefef}
 .pageTitle h2{padding:0; margin:0}
 .bodyInner{padding:28px 0}
 .carousel-caption {bottom: 20px;}
-.mainTitle {padding: 4px 0;border-top: 1px solid #FF8500;background: #FAFAFA;color: #0C0C0C;text-align: center;box-shadow: 0 0 24px #D5D5D5;}
+.mainTitle {padding: 4px 0;border-top: 1px solid #4F9B76;background: #FAFAFA;color: #0C0C0C;text-align: center;box-shadow: 0 0 24px #4F9B76;}
 .cntr{text-align:center}
 
 /* RESPONSIVE CSS
