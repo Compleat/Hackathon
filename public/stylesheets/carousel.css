@@ -6,6 +6,7 @@ body {
   color: #5a5a5a;
 }
 
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -212,6 +213,7 @@ footer{padding:18px 0; background:#111; color:#fff;}
   }
 
 }
+
 
 @media (min-width: 992px) {
   .featurette-heading {
