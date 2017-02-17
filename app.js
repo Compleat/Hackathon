@@ -1,5 +1,6 @@
 var express = require('express');
 var session = require('express-session');
+var exhbs = require('express-handlebars');
 var MongoStore = require('connect-mongo')(session);
 var path = require('path');
 var logger = require('morgan');
@@ -29,6 +30,7 @@ var auth = require('./routes/auth');
 var app = express();
 
 // view engine setup
+app.engine('.hbs',exphbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
