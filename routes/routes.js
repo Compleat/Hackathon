@@ -4,6 +4,7 @@ var models = require('../models');
 var User = models.User;
 const yelp = require('yelp-fusion');
 
+
 const clientId=process.env.YELP_CONSUMER_KEY;
 const clientSecret=process.env.YELP_CONSUMER_SECRET;
 
@@ -12,11 +13,13 @@ const searchRequest = {
   location: 'san francisco, ca'
 };
 
+
 yelp.accessToken(clientId, clientSecret).then(response => {
   const client = yelp.client(response.jsonBody.access_token);
 
   client.search(searchRequest).then(response => {
     const firstResult = response.jsonBody.businesses[0];
+
     var prettyJson = JSON.stringify(firstResult, null, 4);
     prettyJson = JSON.parse(prettyJson);
   //  console.log(prettyJson)
@@ -41,6 +44,7 @@ yelp.accessToken(clientId, clientSecret).then(response => {
       restprice: prettyJson.price,
       restdisplayphone: prettyJson.display_phone,
       restcount: prettyJson.review_count,
+
       resturl: prettyJson.url
     });
     console.log(rest);
@@ -50,6 +54,7 @@ yelp.accessToken(clientId, clientSecret).then(response => {
 
     console.log(prettyJson);
     console.log('hello')
+
   });
 }).catch(e => {
   console.log(e);
