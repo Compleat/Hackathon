@@ -1,6 +1,6 @@
 var express = require('express');
 var session = require('express-session');
-var exhbs = require('express-handlebars');
+var exphbs = require('express-handlebars');
 var MongoStore = require('connect-mongo')(session);
 var path = require('path');
 var logger = require('morgan');
@@ -10,6 +10,8 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var mongoose = require('mongoose');
 var connect = process.env.MONGODB_URI;
+var FacebookStrategy = require('passport-facebook');
+
 
 var REQUIRED_ENV = "SECRET MONGODB_URI".split(" ");
 
@@ -82,8 +84,23 @@ passport.use(new LocalStrategy(function(username, password, done) {
 }
 ));
 
+// //facebook strategy
+// passport.use(new FacebookStrategy({
+//     clientID: process.env.FB_CLIENT_ID,
+//     clientSecret: process.env.FB_CLIENT_SECRET,
+//     callbackURL: process.env.callbackURL
+//   },
+//   function(accessToken, refreshToken, profile, cb) {
+//     models.User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
+
 app.use('/', auth(passport));
 app.use('/', routes);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
