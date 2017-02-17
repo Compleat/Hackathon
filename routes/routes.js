@@ -4,18 +4,25 @@ var models = require('../models');
 var User = models.User;
 const yelp = require('yelp-fusion');
 
-var yelp = new Yelp({
-  clientId: process.env.CONSUMER_KEY,
-  clientSecret: process.env.CONSUMER_SECRET,
-});
+
+const clientId=process.env.YELP_CONSUMER_KEY;
+const clientSecret=process.env.YELP_CONSUMER_SECRET;
+
+const searchRequest = {
+  term:'Four Barrel Coffee',
+  location: 'san francisco, ca'
+};
+
 
 yelp.accessToken(clientId, clientSecret).then(response => {
   const client = yelp.client(response.jsonBody.access_token);
 
   client.search(searchRequest).then(response => {
     const firstResult = response.jsonBody.businesses[0];
-    const prettyJson = JSON.stringify(firstResult, null, 4);
-    console.log(prettyJson);
+
+    var prettyJson = JSON.stringify(firstResult, null, 4);
+    prettyJson = JSON.parse(prettyJson);
+  //  console.log(prettyJson)
     var rest = new models.Restaurant({
       restname: prettyJson.name,
       restlocation: {
@@ -37,11 +44,17 @@ yelp.accessToken(clientId, clientSecret).then(response => {
       restprice: prettyJson.price,
       restdisplayphone: prettyJson.display_phone,
       restcount: prettyJson.review_count,
-      resurl: prettyJson.url
-        });
+
+      resturl: prettyJson.url
+    });
+    console.log(rest);
     rest.save(function(err){
-      if(err) throw new Error ('LISA SUCKS');
-    })
+      if(err) console.log(err);
+    });
+
+    console.log(prettyJson);
+    console.log('hello')
+
   });
 }).catch(e => {
   console.log(e);
@@ -53,7 +66,7 @@ res.render('signup');
 });
 
 router.post('/signup', function(res,res){
-  
+
 });
 
 router.get('/', function(req, res, next) {

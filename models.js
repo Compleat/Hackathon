@@ -12,7 +12,7 @@ var restaurantSchema = mongoose.Schema({
     required: true
   },
   restlocation: {
-    display_address:[String],
+    display_address:Array,
     zip_code: String,
     city: String,
     address1: String,

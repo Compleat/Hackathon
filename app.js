@@ -1,5 +1,6 @@
 var express = require('express');
 var session = require('express-session');
+var exhbs = require('express-handlebars');
 var MongoStore = require('connect-mongo')(session);
 var path = require('path');
 var logger = require('morgan');
@@ -19,16 +20,18 @@ REQUIRED_ENV.forEach(function(el) {
   }
 });
 
-
+// mongoose.Promise = global.Promise;
 mongoose.connect(connect);
 
 var models = require('./models');
+
 
 var routes = require('./routes/routes');
 var auth = require('./routes/auth');
 var app = express();
 
 // view engine setup
+app.engine('.hbs',exphbs({defaultLayout: 'layout', extname: '.hbs'}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -113,7 +116,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 app.listen(port);
 console.log('Express started. Listening on port %s', port);
 
