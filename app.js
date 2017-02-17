@@ -1,6 +1,6 @@
 var express = require('express');
 var session = require('express-session');
-var exhbs = require('express-handlebars');
+var exphbs = require('express-handlebars');
 var MongoStore = require('connect-mongo')(session);
 var path = require('path');
 var logger = require('morgan');
