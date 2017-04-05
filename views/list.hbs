@@ -1,0 +1,19 @@
+
+{{#if restaurants}}
+{{#each restaurants}}
+<ul>
+<li> {{this.restleaf}} </li>
+<li> {{this.restlocation}} </li>
+<li> {{this.restname}} </li>
+<li> {{this.restdistance}} </li>
+<li> {{this.restcoord.restlat}} </li>
+<li> {{this.restcoord.restlng}} </li>
+<li> {{this.restrating}} </li>
+<li> {{this.restphone}} </li>
+<li> {{this.restprice}} </li>
+<li> {{this.restdisplayphone}} </li>
+<li> {{this.restcount}} </li>
+<li> {{this.resturl}} </li>
+</ul>
+{{/each}}
+{{/if}}

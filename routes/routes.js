@@ -55,13 +55,10 @@ searchArray.forEach(function(element){
 
         resturl: prettyJson.url
       });
-      console.log(rest.restname);
-      console.log(rest.restdistance);
+
       // rest.save(function(err){
       //   if(err) console.log(err);
       // });
-
-      console.log('hello')
       models.Restaurant.findOrCreate(rest, function(err){
         if(err) console.log(err);
       });
@@ -72,8 +69,16 @@ searchArray.forEach(function(element){
 });
 //////////////////////////////// PUBLIC ROUTES ////////////////////////////////
 // Users who are not logged in can see these routes
+router.get('/privacy', function(req, res) {
+  res.render('privacy');
+});
+
+router.get('/facebook', function(req, res) {
+  res.redirect('https://www.facebook.com/')
+});
+
 router.get('/signup', function(req,res){
-res.render('signup');
+  res.render('signup');
 });
 
 router.post('/signup', function(res,res){
@@ -84,13 +89,77 @@ router.get('/', function(req, res, next) {
   res.render('home');
 });
 
+router.get('/businesslogin', function(req, res, next) {
+  res.render('login')
+});
+
+// router.post('/search', function(req, res, next) {
+//   console.log(req.body);
+// })
+
+router.get('/search', function(req, res, next) {
+  res.render('home')
+})
+
+router.post('/search', function(req, res) {
+  var q= {
+    vegan: {$gte:0},
+    vegetarian: {$gte:0},
+    nut: {$gte:0},
+    milk: {$gte:0},
+    gluten: {$gte:0},
+    restdistance: {$gte:0},
+    dollar:  {$gte:0},
+    leaf: {$gte:0}
+  }
+//food restriction
+if(req.body.Vegan) q.vegan = {$gt:0};
+if(req.body.Vegetarian) q.vegetarian = {$gt:0};
+if(req.body.NutFree) q.nut = {$gt:0};
+if(req.body.LactoseFree) q.milk = {$gt:0};
+if(req.body.GlutenFree) q.gluten = {$gt:0};
+//distance
+if(req.body.lessthanone) q.distance = {$lt:1};
+if(req.body.onetofive) q.distance = {$gt:1, $lt:5};
+if(req.body.sixtofifteen) q.distance = {$gt:6,$lt:15};
+if(req.body.sixteenplus) q.distance = {$gt:16};
+//dollar
+if(req.body.onedollar) q.dollar = {$lte:'$'};
+if(req.body.twodollar) q.dollar = {$lte:'$$'};
+if(req.body.threedollar) q.dollar = {$lte:'$$$'};
+if(req.body.fourdollar) q.dollar = {$lte:'$$$$'};
+//leafs
+if(req.body.SingleLeaf) {
+  if(req.body.Vegan) q.vegan = 1;
+  if(req.body.Vegetarian) q.vegetarian = 1;
+  if(req.body.NutFree) q.nut = 1;
+  if(req.body.LactoseFree) q.milk = 1;
+  if(req.body.GlutenFree) q.gluten = 1;
+}
+console.log('lisa');
+console.log(q);
+console.log('===');
+console.log('restleaf.vegan');
+models.Restaurant.find({"restleaf.vegan": q.vegan, "restleaf.vegetarian": q.vegetarian,
+ "restleaf.milk": q.milk, "restleaf.nut": q.nut, "restleaf.glutenfree": q.gluten,
+  "restprice": q.dollar}, function (err, restaurants) {
+  if (err) { console.log(err); }
+  else {
+    console.log(restaurants);
+
+    res.render('list', {restaurants: restaurants});
+  }
+});
+
+});
+
 ///////////////////////////// END OF PUBLIC ROUTES /////////////////////////////
 
 router.use(function(req, res, next){
   if (!req.user) {
     res.redirect('/login');
   } else {
-    return next();
+    return next('login');
   }
 });
 
@@ -99,7 +168,7 @@ router.use(function(req, res, next){
 
 router.get('/protected', function(req, res, next) {
   res.render('protectedRoute', {
-    username: req.user.username,
+    username: req.user.username
   });
 });
 

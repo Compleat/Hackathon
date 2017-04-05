@@ -1,11 +1,9 @@
 var mongoose = require('mongoose');
-
 var userSchema = mongoose.Schema({
   username: String,
   password: String,
   phone: String
 });
-
 var restaurantSchema = mongoose.Schema({
   restname: {
     type: String,
@@ -35,17 +33,22 @@ var restaurantSchema = mongoose.Schema({
   restcount: Number,
   resturl: {
     type: String,
-
     required: true
   },
-  restleaf: Number
+  restleaf: {
+    vegan:Number,
+    vegetarian:Number,
+    milk:Number,
+    nut:Number,
+    glutenfree:Number
+  }
 });
-
 // TODO - this lol
 var filterSchema = mongoose.Schema({
   filter: String
 });
-
+// find, findOne works on collections --> statics
+// documents for methods
 restaurantSchema.statics.findOrCreate = function(rest,cb){
   this.findOne({restname: rest.restname},function(err,rst){
       if(err) console.log(err);
@@ -57,11 +60,9 @@ restaurantSchema.statics.findOrCreate = function(rest,cb){
       }
     });
   }
-
   User = mongoose.model('User', userSchema);
   Restaurant = mongoose.model("Restaurant", restaurantSchema);
   Filter = mongoose.model("Filter", filterSchema);
-
   module.exports = {
     User:User,
     Restaurant:Restaurant,
